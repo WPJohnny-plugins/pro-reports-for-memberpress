@@ -29,6 +29,10 @@ Product breakdowns – calculate quantities sold, coupons used, and total sales 
 
 == Changelog ==
 
+= 0.1.2 =
+
+Updated correct contributor name.
+
 = 0.1.1 =
 
 * Initial Release
