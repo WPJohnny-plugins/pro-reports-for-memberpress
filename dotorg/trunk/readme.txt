@@ -1,6 +1,7 @@
   
 === Pro Reports for MemberPress ===
-Contributors: treeflips, seekmid
+Contributors: WPJohnny, seekmid
+Donate link: https://wordpress.org/plugins/code-click-to-copy/
 Tags: memberpress, reports, membership
 Requires at least: 4.9
 Tested up to: 5.4.1
