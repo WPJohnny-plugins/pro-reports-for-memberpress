@@ -5,7 +5,7 @@ Description:  Show MP reports with more date-ranges and individual product sales
 Plugin URI:   https://wpjohnny.com/wpj-memberpress-pro-reports/
 Author:       WPJohnny
 Author URI:   https://wpjohnny.com
-Version:      0.1.1
+Version:      0.1.2
 Text Domain:  memberpress-pro-reports
 Domain Path:  /languages
 License:      GPL v2 or later
