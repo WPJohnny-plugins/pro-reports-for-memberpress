@@ -1,4 +1,10 @@
-# Pro Reports for MemberPress
+  
+=== Pro Reports for MemberPress ===
+Contributors: WPJohnny, seekmid
+Donate link: https://wordpress.org/plugins/code-click-to-copy/
+Tags: memberpress, reports, membership
+Requires at least: 4.9
+Tested up to: 5.4.1
 
 FUNCTION
 
@@ -21,6 +27,9 @@ Visual proportion – bar charts show proportion of sales to each product.
 Filter products – Can filter/choose which products to show on sales charts.
 Product breakdowns – calculate quantities sold, coupons used, and total sales by each product.
 
-INSTRUCTIONS
 
-Look for "Pro Reports" in your MemberPress sidebar menu in WP admin Dashboard, then click around. Select which products and dates you'd like to see.
+== Changelog ==
+
+= 0.1.1 =
+
+* Initial Release
