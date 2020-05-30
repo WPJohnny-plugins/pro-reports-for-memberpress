@@ -1,6 +1,6 @@
   
 === Pro Reports for MemberPress ===
-Contributors: treeflips
+Contributors: treeflips, zeroneit
 Donate link: https://wpjohnny.com/
 Tags: memberpress, reports, membership
 Requires at least: 4.9
