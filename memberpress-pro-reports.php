@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name:  Pro Reports for MemberPress
-Description:  Show MP reports with more date-ranges and individual product sales data.
-Plugin URI:   https://wpjohnny.com/wpj-memberpress-pro-reports/
+Description:  Show MemberPress reports with more detail. More date-ranges, and individual product details (quantity, total, coupons-used).
+Plugin URI:   https://wpjohnny.com/pro-reports-for-memberpress/
 Author:       WPJohnny
 Author URI:   https://wpjohnny.com
 Version:      0.1.2
