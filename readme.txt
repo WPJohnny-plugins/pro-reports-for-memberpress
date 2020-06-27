@@ -1,39 +1,52 @@
   
 === Pro Reports for MemberPress ===
 Contributors: treeflips, zeroneit
-Donate link: https://wpjohnny.com/
-Tags: memberpress, reports, membership
+Donate link: https://www.paypal.me/wpjohnny
+Tags: memberpress, reports, membership, addon
 Requires at least: 4.9
 Requires PHP: 7.2
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Stable tag: 0.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+Show MemberPress reports with more detail. More date-ranges, and individual product details (quantity, total, coupons-used).
 
+== Description ==
 
-
-FUNCTION
-
-Show MemberPress reports in a more useful way. More date-ranges, and break down by individual product sales (quantity/total/coupons-used).
-
-DESCRIPTION
-
-My biggest problem with the built-in MemberPress reports function was that it didn’t show enough useful data for me. You might be fine with it if you only have a few products (aka “memberships”) or a few members. But once you have tons of products and members, you need something much more robust.
-
-Mainly, you need to have more helpful information about your products (how many of each product sold, etc). Currently, the built-in MemberPress reports spends too much time on transaction-related info like “completed, pending, failed, refunded”. Those are nice to have in terms of transactional data, but not helpful to me in terms of product data.
+This plugins lets you see more useful data than the built-in MemberPress reports. You can see how many of each membership/product sold, etc. Currently, the built-in MemberPress reports spends too much time on transaction-related info like “completed, pending, failed, refunded”. Those are nice to have in terms of transactional data, but not helpful to me in terms of product data.
 
 I got sick of waiting around for MemberPress to update their official reports function. I’ve asked for certain features and laid them out nicely for 2 years, even spoke to some of their devs but they never got around to it. I think they’re too busy doing integrations and what not so I built my own reports plugin.
 
-It will be free for now, but soon will charge to recoup development costs and also improve it.
+It will be free for now, but might charge one day to recoup development costs and also improve it.
 
-FEATURES
+== Features ==
 
-More available date ranges – default MemberPress reports only shows Month, Year, All-Time. Mine allows Yesterday, Today, Last 7 Days, Last 30 days, This Month, This Year, Last 364 Days, Last Year, and Custom Date Range.
-Visual proportion – bar charts show proportion of sales to each product.
-Filter products – Can filter/choose which products to show on sales charts.
-Product breakdowns – calculate quantities sold, coupons used, and total sales by each product.
+* More available date ranges – default MemberPress reports only shows Month, Year, All-Time. This plugin allows Yesterday, Today, Last 7 Days, Last 30 days, This Month, This Year, Last 364 Days, Last Year, and Custom Date Range.
+* Visual proportion – bar charts show proportion of sales to each product.
+* Filter products – Can filter/choose which products to show on sales charts.
+* Product breakdowns – calculate quantities sold, coupons used, and total sales by each product.
+* Match website timezone - currently, the MemberPress reports show data in UTC timezone which can be frustrating if you want to see data on your website's timezone. I'm looking to recode this to translate the reports data to use the same timezone as you site. This will NOT change the actual data, it just changes what you see in reports.
+
+== Installation ==
+
+1. Install easily from your dashboard Add Plugins page or manually download the plugin and upload the extracted archived to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. From your Dashboard, go to the sidebar MemberPress menu and click on "Pro Reports".
+
+== Frequently Asked Questions ==
+
+= Does this plugin work with newest WP version and also older versions? =
+Yes, this plugin works perfect with the latest version of WordPress! It also works with older versions as well but you should always run the latest WordPress and PHP version for best security and performance. This plugin is used in my critical sites so you can be assured it works perfect.
+
+= Will this plugin slow down my site? =
+No. Nothing is loaded in the frontend. I'm an absolute speed fanatic.
+
+= Do you plan to add more features or improve the visual styling? =
+Not unless someone wanted to pay for my development time and costs. This was our own custom-developed inhouse plugin and now released to the community. 
+
+== Screenshots ==
+1. Quick view of how it looks.
 
 
 == Changelog ==
