@@ -18,7 +18,7 @@ This plugins lets you see more useful data than the built-in MemberPress reports
 
 I got sick of waiting around for MemberPress to update their official reports function. I’ve asked for certain features and laid them out nicely for 2 years, even spoke to some of their devs but they never got around to it. I think they’re too busy doing integrations and what not so I built my own reports plugin.
 
-It will be free for now, but might charge one day to recoup development costs and also improve it.
+This version will be free forever, but a premium version might be created if there's a demand for it.
 
 == Features ==
 
