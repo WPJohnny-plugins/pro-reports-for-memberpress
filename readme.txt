@@ -54,7 +54,8 @@ Not unless someone wanted to pay for my development time and costs. This was our
 = 0.1.3 =
 
 - Refunded transactions are calculated in report now.
-- Transactions created time is UTC+0 in mysql database, but those are included or excluded in other time zone based on Settings > General > Timezone setting.
+- Resolved issue where some transactions weren't showing in reports based on WP Settings > General > Timezone.
+- Updated to show plugin compatibility for latest WP version.
 
 = 0.1.2 =
 
