@@ -6,7 +6,7 @@ Tags: memberpress, reports, membership, addon
 Requires at least: 4.9
 Requires PHP: 7.2
 Tested up to: 5.4.2
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -50,6 +50,11 @@ Not unless someone wanted to pay for my development time and costs. This was our
 
 
 == Changelog ==
+
+= 0.1.3 =
+
+- Refunded transactions are calculated in report now.
+- Transactions created time is UTC+0 in mysql database, but those are included or excluded in other time zone based on Settings > General > Timezone setting.
 
 = 0.1.2 =
 
