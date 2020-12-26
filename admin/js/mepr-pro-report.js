@@ -372,7 +372,10 @@
 					.attr("class", "category-total-axis")
 					.attr("transform", "translate(0," + _height + ")")
 					.call(d3.axisBottom(xScale).tickSize(0).tickPadding(60).tickFormat(function(d, i) {
-						return '$' + totals[i]
+                        if (totals[i] >= 0)
+						    return '$' + totals[i]
+                        else
+                            return '- $' + Math.abs(totals[i]);
 					}))
 					.call(g => g.select(".domain").remove());
 			}
@@ -436,13 +439,18 @@
 			function update () {
 				var tableBodyHTML = '';
 				_tableData.forEach(function(d) {
+                    if (d.total.toFixed(2) >= 0)
+                        var display_total = '$' + d.total.toFixed(2);
+                    else
+                        var display_total = '- $' + Math.abs(d.total.toFixed(2));
+                        
 					tableBodyHTML += ' \
 						<tr> \
 							<td style="background-color: '+ d.productColor +'">&nbsp;</td> \
 							<td>' + d.productName + '</td> \
 							<td>' + d.quantity + '</td> \
 							<td>' + d.coupon + '</td> \
-							<td>$' + d.total.toFixed(2) + '</td> \
+							<td>' + display_total + '</td> \
 						</tr> \
 					';
 				})
