@@ -6,7 +6,7 @@ Tags: memberpress, reports, membership, addon
 Requires at least: 4.9
 Requires PHP: 7.2
 Tested up to: 5.6
-Stable tag: 0.1.3
+Stable tag: 0.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -50,6 +50,13 @@ Not unless someone wanted to pay for my development time and costs. This was our
 
 
 == Changelog ==
+
+= 0.1.4 =
+
+- Chart now shows total refunds for the period.
+- Data below now shows a refund column (for refunds made during the period).
+- Previously, refunds were subtracted from the total but that behavior has been removed, since MemberPress refunds simply cancel out the initial payment. There is no minus transaction.
+- New "ALL TIME" option (showing all transactions) in the date range dropdown. If selected date range scope extends over 365 days, the graph shows report data by year.
 
 = 0.1.3 =
 

@@ -85,7 +85,8 @@
 							'LAST MONTH': [moment().subtract(1, 'months').startOf('month'), moment().subtract(1, 'months').endOf('month')],
 							'THIS YEAR': [moment().startOf('year'), moment().endOf('year')],
 							'LAST 364 DAYS': [moment().subtract(363, 'days'), moment()],
-							'LAST YEAR': [moment().subtract(1, 'years').startOf('year'), moment().subtract(1, 'years').endOf('year')]
+                            'LAST YEAR': [moment().subtract(1, 'years').startOf('year'), moment().subtract(1, 'years').endOf('year')],
+							'ALL TIME': [moment(transactions[0]['created_at']), moment(transactions[transactions.length - 1]['created_at'])]
 						}
 					}, cb);
 				},
@@ -221,10 +222,22 @@
 							}
 							return false;
 						});
-						var total = d3.sum(sales, function(sale) {
-							return sale.total;
-						});
-						category[product.ID] = total || 0;
+                        var total = d3.sum(sales, function(sale) {
+                            if (sale.status == 'complete') {
+                                return sale.total;
+                            }
+                            return 0;
+                        });
+                        var refund_total = d3.sum(sales, function(sale) {
+                            if (sale.status == 'refunded') {
+                                return sale.total;
+                            }
+                            return 0;
+                        });
+						category[product.ID] = {
+                            total: total,
+                            refund_total: refund_total
+                        };
 					});
 
 					graphData.push(category);
@@ -232,7 +245,13 @@
 
 				_graphData = graphData;
 			}
-
+ 
+            /**
+            * Get report data by yearly if selected period scope is over 31 days but it is under 365 days
+            * 
+            * @param products
+            * @param transactions
+            */
 			function getMonthlyData (products, transactions) {
 				var monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
@@ -251,20 +270,78 @@
 							return false;
 						})
 						var total = d3.sum(sales, function(sale) {
-							return sale.total;
+                            if (sale.status == 'complete') {
+                                return sale.total;
+                            }
+                            return 0;
 						});
-						category[product.ID] = total || 0;
-					})
+                        var refund_total = d3.sum(sales, function(sale) {
+                            if (sale.status == 'refunded') {
+                                return sale.total;
+                            }
+                            return 0;
+                        });
+                        
+                        category[product.ID] = {
+                            total: total,
+                            refund_total: refund_total
+                        };
+					});
 
 					graphData.push(category);
 				}
 				
 				_graphData = graphData;
 			}
+            
+            /**
+            * Get report data by yearly if selected period scope is over 365 days
+            * 
+            * @param products
+            * @param transactions
+            */
+            function getYearlyData (products, transactions) {
+                var graphData = [];
+                
+                for (var y = moment(transactions[0]['created_at']).year(); y <= moment(transactions[transactions.length - 1]['created_at']).year(); y++) {
+                    var category = {};
+                    category['category'] = y;
+                    
+                    products.forEach(function(product) {
+                        var sales = transactions.filter(function(transaction) {
+                            if (transaction.product_id == product.ID && moment(transaction.created_at).year() == y) {
+                                return true;
+                            }
+                            return false;
+                        })
+                        var total = d3.sum(sales, function(sale) {
+                            if (sale.status == 'complete') {
+                                return sale.total;
+                            }
+                            return 0;
+                        });
+                        var refund_total = d3.sum(sales, function(sale) {
+                            if (sale.status == 'refunded') {
+                                return sale.total;
+                            }
+                            return 0;
+                        });
+                        
+                        category[product.ID] = {
+                            total: total,
+                            refund_total: refund_total
+                        };
+                    });
+                    graphData.push(category);
+                }
+                _graphData = graphData;
+            }
 
 			function getGraphData (products, transactions, start, end) {
 				var dayCount = end.diff(start, 'days');
-				if (dayCount > 31) {
+				if (dayCount > 365) {
+                    getYearlyData(products, transactions);
+                } else if (dayCount > 31) {
 					getMonthlyData(products, transactions);
 				} else {
 					getDailyData(products, transactions, start, dayCount);
@@ -280,22 +357,32 @@
 				});
 			    
 			    // Data Keys Extract
-				var categories = _graphData.map(function(d) { return d.category; });
+				var categories = _graphData.map(function(d) { return d.category; });                                                                               
 				var productIDs = products.map(function(d) { return d.ID; });
 				var totals = _graphData.map(function(category) {
 					var total = 0;
+                    var refund_total = 0;
 					productIDs.forEach(function(product) {
-						total += category[product];
+                        total += category[product]['total'];
+						refund_total += category[product]['refund_total'];
 					});
-					return total;
+					return {
+                        total: total,
+                        refund_total: refund_total
+                    };
 				});
 				
 				// Total Prices
-				var totalPrice = totals.reduce(function(price, sum) {
-				    return price + sum
-				})
-				// console.log(totalPrice, totalPrice.toFixed(2), parseFloat(totalPrice.toFixed(2)), totalPrice.toFixed(2).toString())
-				$('#item_price_total').html('TOTAL = $' + parseFloat(totalPrice.toFixed(2)))
+				var totalPrice = totals.map(function(d) { return d.total; }).reduce(function(sum, d) {
+				    return d + sum;
+				});
+                
+                // Refund Total Prices
+                var refundTotalPrice = totals.map(function(d) { return d.refund_total; }).reduce(function(sum, d) {
+                    return d + sum;
+                });
+				
+				$('#item_price_total').html('TOTAL = <strong>$' + parseFloat(totalPrice.toFixed(2)) + '</strong>, REFUND = <strong>$' + parseFloat(refundTotalPrice.toFixed(2))) + '</strong>';
 
 				// Init Container Size
 				var containerWidth  = _container.innerWidth();
@@ -321,12 +408,20 @@
 
 				var yScale = d3.scaleLinear()
 					.rangeRound([_height, 0])
-					.domain([0, d3.max(totals, function(total) { return total; })]).nice();
+					.domain([0, d3.max(totals, function(d) { return d.total; })]).nice();
 
 				var stack = d3.stack();
-
+                
+                var _graphDataCompleteOnly = _graphData.map(function(data) {
+                    var newData = {};
+                    for(key in data) {
+                        newData[key] = data[key].total;
+                    }
+                    newData['category'] = data.category;
+                    return newData;
+                });                        
 				_GROUP.selectAll(".product")
-					.data(stack.keys(productIDs)(_graphData))
+					.data(stack.keys(productIDs)(_graphDataCompleteOnly))
 					.enter().append("g")
 					.attr("class", "product")
 					.selectAll("rect")
@@ -372,10 +467,12 @@
 					.attr("class", "category-total-axis")
 					.attr("transform", "translate(0," + _height + ")")
 					.call(d3.axisBottom(xScale).tickSize(0).tickPadding(60).tickFormat(function(d, i) {
-                        if (totals[i] >= 0)
+                        /*if (totals[i] >= 0)
 						    return '$' + totals[i]
                         else
-                            return '- $' + Math.abs(totals[i]);
+                            return '- $' + Math.abs(totals[i]);*/
+                        
+                        return '$' + totals[i].total;
 					}))
 					.call(g => g.select(".domain").remove());
 			}
@@ -429,7 +526,18 @@
 						productName : product.post_title,
 						quantity : allTransaction.length,
 						coupon : couponTransaction.length,
-						total : getArraySum(allTransaction.map(function(d){ return parseFloat(d.total); }))
+						total : getArraySum(allTransaction.map(function(d){
+                            if (d.status == "complete") {
+                                return parseFloat(d.total);
+                            }
+                            return 0;
+                        })),
+                        refundTotal : getArraySum(allTransaction.map(function(d){
+                            if (d.status == "refunded") {
+                                return parseFloat(d.total);
+                            }
+                            return 0;
+                        }))
 					});
 				})
 
@@ -439,18 +547,22 @@
 			function update () {
 				var tableBodyHTML = '';
 				_tableData.forEach(function(d) {
-                    if (d.total.toFixed(2) >= 0)
+                    var display_total = '$' + d.total.toFixed(2);
+                    var display_refund_total = '$' + d.refundTotal.toFixed(2);
+                    /*if (d.total.toFixed(2) >= 0)
                         var display_total = '$' + d.total.toFixed(2);
                     else
-                        var display_total = '- $' + Math.abs(d.total.toFixed(2));
-                        
+                        var display_total = '- $' + Math.abs(d.total.toFixed(2));*/
+                    
+                    // Todo: Check if quantity sold contains refund quantity
 					tableBodyHTML += ' \
 						<tr> \
 							<td style="background-color: '+ d.productColor +'">&nbsp;</td> \
 							<td>' + d.productName + '</td> \
 							<td>' + d.quantity + '</td> \
 							<td>' + d.coupon + '</td> \
-							<td>' + display_total + '</td> \
+                            <td>' + display_refund_total + '</td> \
+                            <td>' + display_total + '</td> \
 						</tr> \
 					';
 				})

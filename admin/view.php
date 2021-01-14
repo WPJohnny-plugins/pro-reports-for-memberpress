@@ -65,7 +65,8 @@ function mepr_pro_report_view() {
 							<th>Product Name</th>
 							<th>Quantity Sold</th>
 							<th>Coupon Used</th>
-							<th>Total</th>
+                            <th>Refund</th>
+                            <th>Total</th>
 						</thead>
 						<tbody>
 						</tbody>
