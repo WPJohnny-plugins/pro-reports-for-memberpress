@@ -71,24 +71,44 @@
 
 					cb(startDate, endDate);
 
-					_object.daterangepicker({
-						startDate: startDate,
-						endDate: endDate,
-						ranges: {
-							'TODAY': [moment(), moment()],
-							'YESTERDAY': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-							'LAST 7 DAYS': [moment().subtract(6, 'days'), moment()],
-							'THIS WEEK': [moment().startOf('week'), moment().endOf('week')],
-							'LAST WEEK': [moment().subtract(1, 'weeks').startOf('week'), moment().subtract(1, 'weeks').endOf('week')],
-							'LAST 30 DAYS': [moment().subtract(29, 'days'), moment()],
-							'THIS MONTH': [moment().startOf('month'), moment().endOf('month')],
-							'LAST MONTH': [moment().subtract(1, 'months').startOf('month'), moment().subtract(1, 'months').endOf('month')],
-							'THIS YEAR': [moment().startOf('year'), moment().endOf('year')],
-							'LAST 364 DAYS': [moment().subtract(363, 'days'), moment()],
-                            'LAST YEAR': [moment().subtract(1, 'years').startOf('year'), moment().subtract(1, 'years').endOf('year')],
-							'ALL TIME': [moment(transactions[0]['created_at']), moment(transactions[transactions.length - 1]['created_at'])]
-						}
-					}, cb);
+					if (transactions.length > 0) {
+						_object.daterangepicker({
+							startDate: startDate,
+							endDate: endDate,
+							ranges: {
+								'TODAY': [moment(), moment()],
+								'YESTERDAY': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+								'LAST 7 DAYS': [moment().subtract(6, 'days'), moment()],
+								'THIS WEEK': [moment().startOf('week'), moment().endOf('week')],
+								'LAST WEEK': [moment().subtract(1, 'weeks').startOf('week'), moment().subtract(1, 'weeks').endOf('week')],
+								'LAST 30 DAYS': [moment().subtract(29, 'days'), moment()],
+								'THIS MONTH': [moment().startOf('month'), moment().endOf('month')],
+								'LAST MONTH': [moment().subtract(1, 'months').startOf('month'), moment().subtract(1, 'months').endOf('month')],
+								'THIS YEAR': [moment().startOf('year'), moment().endOf('year')],
+								'LAST 364 DAYS': [moment().subtract(363, 'days'), moment()],
+	                            'LAST YEAR': [moment().subtract(1, 'years').startOf('year'), moment().subtract(1, 'years').endOf('year')],
+								'ALL TIME': [moment(transactions[0]['created_at']), moment(transactions[transactions.length - 1]['created_at'])]
+							}
+						}, cb);
+					} else {
+						_object.daterangepicker({
+							startDate: startDate,
+							endDate: endDate,
+							ranges: {
+								'TODAY': [moment(), moment()],
+								'YESTERDAY': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+								'LAST 7 DAYS': [moment().subtract(6, 'days'), moment()],
+								'THIS WEEK': [moment().startOf('week'), moment().endOf('week')],
+								'LAST WEEK': [moment().subtract(1, 'weeks').startOf('week'), moment().subtract(1, 'weeks').endOf('week')],
+								'LAST 30 DAYS': [moment().subtract(29, 'days'), moment()],
+								'THIS MONTH': [moment().startOf('month'), moment().endOf('month')],
+								'LAST MONTH': [moment().subtract(1, 'months').startOf('month'), moment().subtract(1, 'months').endOf('month')],
+								'THIS YEAR': [moment().startOf('year'), moment().endOf('year')],
+								'LAST 364 DAYS': [moment().subtract(363, 'days'), moment()],
+	                            'LAST YEAR': [moment().subtract(1, 'years').startOf('year'), moment().subtract(1, 'years').endOf('year')]
+							}
+						}, cb);
+					}
 				},
 				getTransactions : function () {
 					var transactions = filterData();
