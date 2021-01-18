@@ -26,7 +26,7 @@ It will be free for now, but might charge one day to recoup development costs an
 * Visual proportion – bar charts show proportion of sales to each product.
 * Filter products – Can filter/choose which products to show on sales charts.
 * Product breakdowns – calculate quantities sold, coupons used, and total sales by each product.
-* Match website timezone - currently, the MemberPress reports show data in UTC timezone which can be frustrating if you want to see data on your website's timezone. I'm looking to recode this to translate the reports data to use the same timezone as you site. This will NOT change the actual data, it just changes what you see in reports.
+* Match website timezone - the built-in MemberPress reports shows data in UTC timezone which can be frustrating if it doesn't match your website's timezone. My plugin conveniently shows the report data in the same timezon as your site. This does NOT change the actual data, it only just changes what you see in reports.
 
 == Installation ==
 
