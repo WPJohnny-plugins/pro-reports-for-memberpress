@@ -7,7 +7,7 @@
 }
 #mepr_pro_report_loading {
 	background: white;
-    border-top: 1px solid #0073AA;
+    border: 1px solid #CCC;
     text-align: center;
     padding: 10px;
 }
@@ -17,7 +17,7 @@
 	background-color: #FFF;
 	cursor: pointer;
 	padding: 4px 10px;
-	border-top: 1px solid #0073AA;
+	border: 1px solid #CCC;
 	width: 200px;
 }
 #mepr_pro_report_date_filter .fa-caret-down {
@@ -28,7 +28,7 @@
 .mepr_pro_report_box {
 	display: none;
 	background-color: white;
-	border-top: 1px solid #0073AA;
+	border: 1px solid #CCC;
 	margin-top: 20px;
 }
 #mepr_pro_report_product_filter {
@@ -41,7 +41,8 @@
 #mepr_pro_report_product_filter .tglBtnWrap span {
 	margin-right: 10px;
 	margin-bottom: 10px;
-	padding: 2px 10px;
+	padding: 0 10px;
+	line-height: 2.15;
 	background-color: #F2F2F2;
 	border-radius: 2px;
 	cursor: pointer;
@@ -50,7 +51,7 @@
 	background-color: #CCC;
 }
 #mepr_pro_report_product_filter .tglBtnWrap span.selected {
-	background-color: #0073AA;
+	background-color: #007cba;
 	color: white;
 }
 #item_price_total {
@@ -90,8 +91,9 @@
 	padding: 10px;
 }
 #mepr_pro_report_sales table thead tr th {
-	background-color: rgba(0, 115, 170, .1);
-	padding: 2px 10px;
+	/* background-color: #f2f2f2; */
+	padding: 0 10px;
+	line-height: 2.15;
 }
 #mepr_pro_report_sales table tbody tr td {
 	text-align: center;
