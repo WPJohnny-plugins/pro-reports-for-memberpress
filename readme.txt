@@ -14,19 +14,19 @@ Show MemberPress reports with more detail. More date-ranges, and individual prod
 
 == Description ==
 
-This plugins lets you see more useful data than the built-in MemberPress reports. You can see how many of each membership/product sold, etc. Currently, the built-in MemberPress reports spends too much time on transaction-related info like “completed, pending, failed, refunded”. Those are nice to have in terms of transactional data, but not helpful to me in terms of product data.
+This plugin shows more useful data than the built-in MemberPress reports. You can see how many of each membership/product sold, etc. Currently, the built-in MemberPress reports spends too much time on transaction-related info like “completed, pending, failed, refunded”. Those are nice to have in terms of transactional data, but not helpful in terms of product sales data.
 
 I got sick of waiting around for MemberPress to update their official reports function. I’ve asked for certain features and laid them out nicely for 2 years, even spoke to some of their devs but they never got around to it. I think they’re too busy doing integrations and what not so I built my own reports plugin.
 
-It will be free for now, but might charge one day to recoup development costs and also improve it.
+It will be free for now, but might charge one day to recoup development costs and also improve it. We're open to suggestions if you're interested in a pro version.
 
 == Features ==
 
-* More available date ranges – default MemberPress reports only shows Month, Year, All-Time. This plugin allows Yesterday, Today, Last 7 Days, Last 30 days, This Month, This Year, Last 364 Days, Last Year, and Custom Date Range.
-* Visual proportion – bar charts show proportion of sales to each product.
-* Filter products – Can filter/choose which products to show on sales charts.
-* Product breakdowns – calculate quantities sold, coupons used, and total sales by each product.
-* Match website timezone - the built-in MemberPress reports shows data in UTC timezone which can be frustrating if it doesn't match your website's timezone. My plugin conveniently shows the report data in the same timezon as your site. This does NOT change the actual data, it only just changes what you see in reports.
+* More available date ranges – default MemberPress reports only shows Month, Year, All-Time. This plugin allows Yesterday, Today, Last 7 Days, Last 30 days, This Month, This Year, Last 364 Days, Last Year, All Time, and Custom Date Range.
+* Visual proportion – bar charts show proportion of sales for each product.
+* Filter products – can filter/choose which products to show on sales charts.
+* Product breakdowns – see quantities sold, coupons used, refunds, and total sales by each product.
+* Match website timezone - the built-in MemberPress reports shows data in UTC timezone which can be frustrating if it doesn't match your website's timezone. My plugin conveniently shows report data in the same timezone as your site. This does NOT change the actual stored data, it only just changes what you see in reports.
 
 == Installation ==
 
