@@ -46,21 +46,24 @@ No. Nothing is loaded in the frontend. I'm an absolute speed fanatic.
 Not unless someone wanted to pay for my development time and costs. This was our own custom-developed inhouse plugin and now released to the community. 
 
 == Screenshots ==
-1. Quick view of how it looks.
+1. Quick view of how it looks. (New version looks even better; will update screenshot soon.)
 
 
 == Changelog ==
 
+= 0.1.6 =
+- Lots of CSS styling updates to look prettier. ;)
+
 = 0.1.5 =
 - Issue Fix: 0 transactions validation added in main javascript file.
-- Issue Fix: $wpdb->prefix is added with Memberpress transaction db table.
+- Issue Fix: $wpdb->prefix is added with MemberPress transaction db table.
 
 = 0.1.4 =
 
 - Chart now shows total refunds for the period.
-- Data below now shows a refund column (for refunds made during the period).
-- Previously, refunds were subtracted from the total but that behavior has been removed, since MemberPress refunds simply cancel out the initial payment. There is no minus transaction.
-- New "ALL TIME" option (showing all transactions) in the date range dropdown. If selected date range scope extends over 365 days, the graph shows report data by year.
+- Sales data now shows a refund column (for refunds made during the period).
+- Previously, refunds were (incorrectly) subtracted from the total but that behavior is now removed since MemberPress refunds simply cancel out the initial payment. There is no minus transaction.
+- New "ALL TIME" option available in the date range dropdown (shows all transactions). If selected date range extends beyond 365 days, the graph will show report data by year.
 
 = 0.1.3 =
 
