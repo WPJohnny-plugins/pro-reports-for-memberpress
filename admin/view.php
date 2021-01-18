@@ -25,9 +25,9 @@ function mepr_pro_report_view() {
 	?>
 	
 	<div class="wrap">
-		<h1>
+		<h2>
 			<?php echo esc_html( get_admin_page_title() ); ?>
-		</h1>
+		</h2>
 		<div id="mepr_pro_report_board">
 			<div id="mepr_pro_report_loading">loading ...</div>
 			<div class="box-right">
