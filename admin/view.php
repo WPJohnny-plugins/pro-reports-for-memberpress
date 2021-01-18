@@ -59,7 +59,7 @@ function mepr_pro_report_view() {
 			</div>
 			<div class="mepr_pro_report_box">
 				<div id="mepr_pro_report_sales">
-					<table>
+					<table class="striped">
 						<thead>
 							<th style="background-color: transparent;">&nbsp;</th>
 							<th>Product Name</th>
