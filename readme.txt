@@ -6,7 +6,7 @@ Tags: memberpress, reports, membership, addon
 Requires at least: 4.9
 Requires PHP: 7.2
 Tested up to: 5.6
-Stable tag: 0.1.4
+Stable tag: 0.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -50,6 +50,10 @@ Not unless someone wanted to pay for my development time and costs. This was our
 
 
 == Changelog ==
+
+= 0.1.5 =
+- Issue Fix: 0 transactions validation added in main javascript file.
+- Issue Fix: $wpdb->prefix is added with Memberpress transaction db table.
 
 = 0.1.4 =
 
