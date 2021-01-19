@@ -23,11 +23,10 @@
 #mepr_pro_report_date_filter .dashicons {
 	font-size: 17px;
 }
-/*#mepr_pro_report_date_filter .fa-caret-down {
-	position: absolute;
-	top: 8px;
-	right: 8px;
-}*/
+#mepr_pro_report_date_filter .span {
+	position: relative;
+    	top: 1px;
+}
 .mepr_pro_report_box {
 	display: none;
 	background-color: white;
