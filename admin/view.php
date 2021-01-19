@@ -64,8 +64,8 @@ function mepr_pro_report_view() {
 							<th style="background-color: transparent;">&nbsp;</th>
 							<th>Product Name</th>
 							<th>Quantity Sold</th>
-							<th>Coupon Used</th>
-                            <th>Refund</th>
+							<th>Coupons Used</th>
+                            <th>Refunded</th>
                             <th>Total</th>
 						</thead>
 						<tbody>
