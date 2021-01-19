@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 
 }
-define('PRMP_V, '0.1.6');
+define('PRMP_V', '0.1.6');
 
 
 
