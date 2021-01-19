@@ -54,6 +54,7 @@ Not unless someone wanted to pay for my development time and costs. This was our
 = 0.1.6 =
 - CSS styling updates to look prettier. ;)
 - Remove unnecessary FontAwesome call from date-range filter.
+- Add plugin version variable to CSS call for cache-busting.
 
 = 0.1.5 =
 - Issue Fix: 0 transactions validation added in main javascript file.
