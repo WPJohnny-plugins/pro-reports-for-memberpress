@@ -8,7 +8,7 @@ function mepr_pro_report_enqueue_styles( $hook ) {
 
 	$daterangepicker_style = plugins_url( '/css/daterangepicker.css', __FILE__ );
 	$jquerydropdown_style = plugins_url( '/css/jquery.dropdown.css', __FILE__ );
-	$mepr_pro_report_style = plugins_url( '/css/mepr-pro-report.css', __FILE__ );
+	$mepr_pro_report_style = plugins_url( '/css/mepr-pro-report.css?v=' . PRMP_V , __FILE__ );
 
 	wp_enqueue_style('fontawesome_style', $fontawesome_style);
 	wp_enqueue_style('daterangepicker_style', $daterangepicker_style);
