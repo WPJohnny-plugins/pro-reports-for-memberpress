@@ -6,7 +6,6 @@ function mepr_pro_report_enqueue_styles( $hook ) {
 	// check if our page
 	if ( 'memberpress_page_mepr-pro-report' !== $hook ) return;
 
-	$fontawesome_style = plugins_url( '/css/fontawesome/css/all.min.css', __FILE__ );
 	$daterangepicker_style = plugins_url( '/css/daterangepicker.css', __FILE__ );
 	$jquerydropdown_style = plugins_url( '/css/jquery.dropdown.css', __FILE__ );
 	$mepr_pro_report_style = plugins_url( '/css/mepr-pro-report.css', __FILE__ );
