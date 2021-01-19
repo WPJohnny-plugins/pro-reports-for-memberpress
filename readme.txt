@@ -52,7 +52,8 @@ Not unless someone wanted to pay for my development time and costs. This was our
 == Changelog ==
 
 = 0.1.6 =
-- Lots of CSS styling updates to look prettier. ;)
+- CSS styling updates to look prettier. ;)
+- Remove unnecessary FontAwesome call from date-range filter.
 
 = 0.1.5 =
 - Issue Fix: 0 transactions validation added in main javascript file.
