@@ -402,7 +402,7 @@
                     return d + sum;
                 });
 				
-				$('#item_price_total').html('TOTAL = <strong>$' + parseFloat(totalPrice.toFixed(2)) + '</strong>, REFUND = <strong>$' + parseFloat(refundTotalPrice.toFixed(2))) + '</strong>';
+				$('#item_price_total').html('TOTAL = <strong>$' + parseFloat(totalPrice.toFixed(2)) + '</strong>, REFUNDED = <strong>$' + parseFloat(refundTotalPrice.toFixed(2))) + '</strong>';
 
 				// Init Container Size
 				var containerWidth  = _container.innerWidth();
