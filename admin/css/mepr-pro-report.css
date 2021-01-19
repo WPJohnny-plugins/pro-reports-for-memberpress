@@ -16,16 +16,12 @@
 	position: relative;
 	background-color: #FFF;
 	cursor: pointer;
-	padding: 4px 10px;
+	padding: 6px 10px 4px 10px;
 	border: 1px solid #CCC;
 	width: 200px;
 }
 #mepr_pro_report_date_filter .dashicons {
 	font-size: 17px;
-}
-#mepr_pro_report_date_filter .span {
-	position: relative;
-    	top: 1px;
 }
 .mepr_pro_report_box {
 	display: none;
