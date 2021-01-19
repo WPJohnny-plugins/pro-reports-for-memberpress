@@ -20,11 +20,14 @@
 	border: 1px solid #CCC;
 	width: 200px;
 }
-#mepr_pro_report_date_filter .fa-caret-down {
+#mepr_pro_report_date_filter .dashicons {
+	font-size: 17px;
+}
+/*#mepr_pro_report_date_filter .fa-caret-down {
 	position: absolute;
 	top: 8px;
 	right: 8px;
-}
+}*/
 .mepr_pro_report_box {
 	display: none;
 	background-color: white;
