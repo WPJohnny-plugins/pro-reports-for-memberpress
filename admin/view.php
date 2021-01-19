@@ -32,9 +32,9 @@ function mepr_pro_report_view() {
 			<div id="mepr_pro_report_loading">loading ...</div>
 			<div class="box-right">
 				<div id="mepr_pro_report_date_filter">
-					<i class="far fa-calendar-alt"></i>
+					<i class="dashicons dashicons-calendar-alt"></i>
 					<span></span>
-					<i class="fas fa-caret-down"></i>
+					<i class="dashicons dashicons-arrow-down-alt2"></i>
 				</div>
 			</div>
 			<div class="mepr_pro_report_box">
