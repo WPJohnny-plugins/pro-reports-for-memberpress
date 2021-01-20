@@ -5,7 +5,7 @@ Description:  Show MemberPress reports with more detail. More date-ranges, and i
 Plugin URI:   https://wpjohnny.com/pro-reports-for-memberpress/
 Author:       WPJohnny
 Author URI:   https://wpjohnny.com
-Version:      0.1.5
+Version:      0.1.6
 Text Domain:  memberpress-pro-reports
 Domain Path:  /languages
 License:      GPL v2 or later
